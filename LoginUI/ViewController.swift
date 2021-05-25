@@ -17,18 +17,67 @@ class ViewController: UIViewController {
     }()
     
 
+    
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var placeHolderLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var placeHolder: UILabel!
+    
+    
+    @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
+    var tokens = [NSObjectProtocol]() // 옵저버 등록을 위한 토큰
+    deinit { // 옵저버 제거
+        tokens.forEach { NotificationCenter.default.removeObserver($0)}
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        textField.becomeFirstResponder() // 바로 키보드를 뜨게만듬
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        nextButton.isEnabled = false // 양식 입력 전 버튼 비활성화
+
         self.textField.delegate = self
+        var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardFrame = frameValue.cgRectValue
+
+                self?.viewBottomConstraint.constant = keyboardFrame.size.height
+                UIView.animate(withDuration: 0.5, animations :  {
+                    self?.view.layoutIfNeeded()
+                })
+
+            }
+        }
+        tokens.append(token)
+        
+        token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.viewBottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.5) {
+                self?.view.layoutIfNeeded()
+            }
+        }
+        tokens.append(token)
     }
+    
+    
 }
 
 extension ViewController : UITextFieldDelegate {
+    
+    
+//    private func textFieldShouldBeginEditing(_ textField: UITextField){
+//        UIView.setAnimationsEnabled(false)
+//    }
+    
+    
+    
+    
     // False 를 리턴하면 문자가 입력되지도 않고 삭제되지도 않는다.
     // 허용된 문자를 입력할때는 true를 리턴해주고, 이상한 문자를 입력하면 false를 입력해준다.
 //    1. 메소드를 호출한 텍스트필드가 전달된다.  2. 편집된 범위
@@ -53,6 +102,8 @@ extension ViewController : UITextFieldDelegate {
         }else {
             placeHolder.text = ".slack.com"
         }
+        
+        nextButton.isEnabled = finalText.length != 0
         return true
     }
 }
