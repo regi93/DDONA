@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var placeHolderLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var placeHolder: UILabel!
-    
-    
     @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
+    
+    
     var tokens = [NSObjectProtocol]() // 옵저버 등록을 위한 토큰
     deinit { // 옵저버 제거
         tokens.forEach { NotificationCenter.default.removeObserver($0)}
@@ -33,12 +33,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         textField.becomeFirstResponder() // 바로 키보드를 뜨게만듬
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         nextButton.isEnabled = false // 양식 입력 전 버튼 비활성화
 
@@ -70,7 +70,13 @@ class ViewController: UIViewController {
 
 extension ViewController : UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.text?.count ?? 0 > 0 {
+        performSegue(withIdentifier: "nextSegue", sender: nil)
+        }
+        return true
+    }
 //    private func textFieldShouldBeginEditing(_ textField: UITextField){
 //        UIView.setAnimationsEnabled(false)
 //    }
