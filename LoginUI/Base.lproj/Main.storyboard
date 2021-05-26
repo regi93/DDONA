@@ -214,8 +214,9 @@
                     <connections>
                         <outlet property="emailTextFeild" destination="Jl4-n6-vuO" id="x8O-Gi-qFj"/>
                         <outlet property="placeHolderLabel" destination="VZQ-iP-r0U" id="4Pl-tD-GDo"/>
-                        <outlet property="titleBottomConstraint" destination="9Ik-4U-zxK" id="Wrz-mk-SgP"/>
                         <outlet property="titleLabel" destination="PUC-rb-CxX" id="IWc-6o-B1o"/>
+                        <outlet property="titleLabelBottomConstraint" destination="UTZ-1x-6Ao" id="4QT-i2-qhr"/>
+                        <outlet property="viewBottomConstraint" destination="QVc-t2-pI5" id="e1k-i1-331"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDG-VJ-yW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
