@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  LoginUI
+//  ddona
 //
-//  Created by 유준용 on 2021/05/25.
+//  Created by 유준용 on 2023/12/13.
 //
 
 import UIKit
