@@ -8,9 +8,7 @@
 import UIKit
 
 class BottomButton: UIButton {
-    
-    var type: BtnType!
-    
+        
     let titleLb: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -26,16 +24,15 @@ class BottomButton: UIButton {
         super.init(coder: coder)
     }
     
-    func configureUI(title: String, type: BtnType){
-        self.type = type
+    func configureUI(title: String, radius: CGFloat, type: BtnType){
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.cornerRadius = 27.5
+        self.layer.cornerRadius = radius
         self.setTitle(nil, for: .normal)
         configureTitleLabel(title: title)
-        configureBtnType()
+        configureBtnType(type: type)
     }
     
-    func configureTitleLabel(title: String){
+    private func configureTitleLabel(title: String){
         titleLb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         titleLb.textColor = .white
         titleLb.text = title
@@ -47,21 +44,23 @@ class BottomButton: UIButton {
         ])
     }
     
-    func configureBtnType(){
-        switch self.type {
+    func configureBtnType(type: BtnType){
+        switch type {
         case .purple:
             self.titleLb.textColor = .white
             self.backgroundColor = UIColor(hexCode: "6100FF")
-        case .grey:
+        case .black:
+            self.titleLb.textColor = .white
+            self.backgroundColor = UIColor(hexCode: "2C2C2D")
+        case .white:
             self.titleLb.textColor = UIColor(hexCode: "868686")
             self.backgroundColor = UIColor(hexCode: "DDDDDD")
-        case .none:
-            break
         }
     }
     
     enum BtnType {
         case purple
-        case grey
+        case white
+        case black
     }
 }
