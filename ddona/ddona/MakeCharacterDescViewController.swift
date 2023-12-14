@@ -41,7 +41,7 @@ class MakeCharacterDescViewController: UIViewController {
     
     private func configureBtn(){
         let btn = BottomButton()
-        btn.configureUI(title: "다음으로 이동", type: .purple)
+        btn.configureUI(title: "다음으로 이동", radius: 26.5 ,type: .purple)
         btn.addTarget(self, action: #selector(nextPage(_ :)), for: .touchUpInside)
         self.view.addSubview(btn)
         NSLayoutConstraint.activate([

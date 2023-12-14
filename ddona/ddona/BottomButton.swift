@@ -26,10 +26,10 @@ class BottomButton: UIButton {
         super.init(coder: coder)
     }
     
-    func configureUI(title: String, type: BtnType){
+    func configureUI(title: String,radius: CGFloat ,type: BtnType){
         self.type = type
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.cornerRadius = 27.5
+        self.layer.cornerRadius = radius
         self.setTitle(nil, for: .normal)
         configureTitleLabel(title: title)
         configureBtnType()

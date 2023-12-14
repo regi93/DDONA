@@ -27,7 +27,7 @@ class MakeCharacterViewController: UIViewController {
     
     private func configureUI(){
         let button = BottomButton()
-        button.configureUI(title: "부캐 만들러 가기", type: .purple)
+        button.configureUI(title: "부캐 만들러 가기", radius: 26.5, type: .purple)
         button.addTarget(self, action: #selector(nextPage(_:)), for: .touchUpInside)
         self.view.addSubview(button)
         NSLayoutConstraint.activate([
