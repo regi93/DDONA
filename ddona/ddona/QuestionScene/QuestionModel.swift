@@ -12,7 +12,7 @@ struct QuestionModel: Codable {
     struct request: Encodable { }
     
     struct response: Decodable {
-        let question: String
+        let quenstion: String
         let answers: [String]
     }
 }

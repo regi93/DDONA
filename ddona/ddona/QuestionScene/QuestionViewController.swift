@@ -41,6 +41,8 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         configureCollectionView()
         configureQuestionTitle()
         configureAnswerView(number: 1, beforeYPosition: questionLb.bottomAnchor)
+        
+        viewModel.fetchQuestion()
     }
     
     
