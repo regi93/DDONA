@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13287B72B2C26EF006F6108 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */; };
+		E13287BA2B2C271A006F6108 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13287B92B2C271A006F6108 /* QuestionModel.swift */; };
 		E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B32B29C96400449E67 /* AppDelegate.swift */; };
 		E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B52B29C96400449E67 /* SceneDelegate.swift */; };
 		E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		E13287B92B2C271A006F6108 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		E18965B02B29C96400449E67 /* ddona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18965B32B29C96400449E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18965B52B29C96400449E67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13287B82B2C26F6006F6108 /* QuestionScene */ = {
+			isa = PBXGroup;
+			children = (
+				E18965F02B29F77900449E67 /* QuestionViewController.swift */,
+				E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */,
+				E13287B92B2C271A006F6108 /* QuestionModel.swift */,
+			);
+			path = QuestionScene;
+			sourceTree = "<group>";
+		};
 		E18965A72B29C96400449E67 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +133,7 @@
 				E18965EA2B29E50A00449E67 /* BottomButton.swift */,
 				E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */,
 				E18965EE2B29F36400449E67 /* MakeCharacterDescViewController.swift */,
-				E18965F02B29F77900449E67 /* QuestionViewController.swift */,
+				E13287B82B2C26F6006F6108 /* QuestionScene */,
 				E18965E32B29D70500449E67 /* CustomTabBarController.swift */,
 				E18965E82B29DAA700449E67 /* ChatViewController.swift */,
 				E18965B92B29C96400449E67 /* Main.storyboard */,
@@ -290,6 +304,7 @@
 				E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */,
 				E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */,
 				E18965E42B29D70500449E67 /* CustomTabBarController.swift in Sources */,
+				E13287BA2B2C271A006F6108 /* QuestionModel.swift in Sources */,
 				E18965ED2B29E82800449E67 /* UIButton.swift in Sources */,
 				E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */,
 				E18965E92B29DAA700449E67 /* ChatViewController.swift in Sources */,
@@ -297,6 +312,7 @@
 				E18965EB2B29E50A00449E67 /* BottomButton.swift in Sources */,
 				E18965EF2B29F36400449E67 /* MakeCharacterDescViewController.swift in Sources */,
 				E18965E72B29D71B00449E67 /* UIColor.swift in Sources */,
+				E13287B72B2C26EF006F6108 /* QuestionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
