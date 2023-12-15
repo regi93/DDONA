@@ -18,8 +18,9 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     let topView = BottomButton()
-    let viewModel = QuestionViewModel()
+    var viewModel: QuestionViewModel?
     let questionLb = UILabel()
+    var answerBtn = [BottomButton]()
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
@@ -29,7 +30,7 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cv
     }()
     
-    let process = 1
+    var process = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,22 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         configureNavBar()
         configureTopView()
         configureCollectionView()
-        configureQuestionTitle()
-        configureAnswerView(number: 1, beforeYPosition: questionLb.bottomAnchor)
+        viewModel?.fetchQuestion(process: self.process) { [weak self] in
+            self?.configureQuestionTitle(text: (self?.viewModel?.question)!)
+            self?.configureAnswerView(number: 1, beforeYPosition: (self?.questionLb.bottomAnchor)!)
+        }
     }
     
+    func showNextQuestion(){
+        if self.process < 19 {
+            let vc = QuestionViewController()
+            vc.viewModel = self.viewModel
+            vc.process = self.process + 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            
+        }
+    }
     
     private func configureNavBar(){
         self.navigationController?.navigationBar.tintColor = .white
@@ -75,25 +88,26 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         ])
     }
     
-    private func configureQuestionTitle(){
-        
-        questionLb.text = "중요한 일을 맡게된 당신, \n 이 때 가장 먼저 할 당신의 반응은?"
-        
+    private func configureQuestionTitle(text: String){
         questionLb.textColor = .white
         questionLb.numberOfLines = 0
-        questionLb.textAlignment = .center
+        questionLb.lineBreakMode = .byWordWrapping
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.42
         questionLb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         questionLb.translatesAutoresizingMaskIntoConstraints = false
+        questionLb.attributedText = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        questionLb.textAlignment = .center
         self.view.addSubview(questionLb)
         NSLayoutConstraint.activate([
             questionLb.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 36),
-            questionLb.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            questionLb.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 40),
+            questionLb.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -40),
             questionLb.heightAnchor.constraint(equalToConstant: 62)
         ])
     }
     
     private func configureAnswerView(number: Int, beforeYPosition: NSLayoutYAxisAnchor){
-        
         let numberView = BottomButton()
         numberView.configureUI(title: "\(number)", radius: 17, type: .black)
         
@@ -106,16 +120,39 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         ])
         
         let answerView = BottomButton()
-        answerView.configureUI(title: "무슨일이 있는지 물어볼래", radius: 26.5, type: .white)
+        answerView.tag = number
+        answerView.configureUI(title: self.viewModel!.answer[number - 1], radius: 26.5, type: .white)
         self.view.addSubview(answerView)
+        self.answerBtn.append(answerView)
         NSLayoutConstraint.activate([
             answerView.topAnchor.constraint(equalTo: numberView.bottomAnchor, constant: 10),
             answerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             answerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             answerView.heightAnchor.constraint(equalToConstant: 57)
         ])
-        
+        answerView.addTarget(self, action: #selector(answerTapped(_ :)), for: .touchUpInside)
         if number < 3 { configureAnswerView(number: number + 1, beforeYPosition: answerView.bottomAnchor)}
     }
+    
+    private func answerSelected(tag: Int){
+        for btn in self.answerBtn {
+            if btn.tag == tag{
+                btn.configureBtnType(type: .purple)
+            }
+            else{
+                btn.configureBtnType(type: .white)
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            self.showNextQuestion()
+        }
+    }
+    
+    @objc func answerTapped(_ sender: UIButton){
+        answerSelected(tag: sender.tag)
+        self.viewModel?.userScore.append(self.viewModel!.scoreStandard[sender.tag - 1])
+        print(self.viewModel?.userScore)
+    }
+    
     
 }

@@ -54,6 +54,7 @@ class MakeCharacterDescViewController: UIViewController {
     
     @objc func nextPage(_ : UIButton){
         let vc = QuestionViewController()
+        vc.viewModel = QuestionViewModel()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

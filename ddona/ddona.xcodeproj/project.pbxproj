@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E13287B72B2C26EF006F6108 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */; };
 		E13287BA2B2C271A006F6108 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13287B92B2C271A006F6108 /* QuestionModel.swift */; };
+		E1541F232B2D8F11004AAD31 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1541F222B2D8F11004AAD31 /* ScoreModel.swift */; };
+		E1541F292B2D939E004AAD31 /* CreateNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1541F282B2D939E004AAD31 /* CreateNickNameViewController.swift */; };
 		E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B32B29C96400449E67 /* AppDelegate.swift */; };
 		E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B52B29C96400449E67 /* SceneDelegate.swift */; };
 		E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		E13287B92B2C271A006F6108 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		E1541F222B2D8F11004AAD31 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		E1541F282B2D939E004AAD31 /* CreateNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNickNameViewController.swift; sourceTree = "<group>"; };
 		E18965B02B29C96400449E67 /* ddona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18965B32B29C96400449E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18965B52B29C96400449E67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +103,49 @@
 			children = (
 				E18965F02B29F77900449E67 /* QuestionViewController.swift */,
 				E13287B62B2C26EF006F6108 /* QuestionViewModel.swift */,
+				E1541F222B2D8F11004AAD31 /* ScoreModel.swift */,
 				E13287B92B2C271A006F6108 /* QuestionModel.swift */,
+				E1541F272B2D9388004AAD31 /* CreateNickName */,
 			);
 			path = QuestionScene;
+			sourceTree = "<group>";
+		};
+		E1541F242B2D935F004AAD31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E18965B92B29C96400449E67 /* Main.storyboard */,
+				E18965BC2B29C96600449E67 /* Assets.xcassets */,
+				E18965BE2B29C96600449E67 /* LaunchScreen.storyboard */,
+				E18965B32B29C96400449E67 /* AppDelegate.swift */,
+				E18965B52B29C96400449E67 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1541F252B2D936D004AAD31 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E18965EA2B29E50A00449E67 /* BottomButton.swift */,
+				E18965E32B29D70500449E67 /* CustomTabBarController.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		E1541F262B2D937B004AAD31 /* QuestionIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				E18965EE2B29F36400449E67 /* MakeCharacterDescViewController.swift */,
+				E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */,
+			);
+			path = QuestionIntroView;
+			sourceTree = "<group>";
+		};
+		E1541F272B2D9388004AAD31 /* CreateNickName */ = {
+			isa = PBXGroup;
+			children = (
+				E1541F282B2D939E004AAD31 /* CreateNickNameViewController.swift */,
+			);
+			path = CreateNickName;
 			sourceTree = "<group>";
 		};
 		E18965A72B29C96400449E67 = {
@@ -128,17 +172,11 @@
 			isa = PBXGroup;
 			children = (
 				E18965E52B29D71300449E67 /* Extension */,
-				E18965B32B29C96400449E67 /* AppDelegate.swift */,
-				E18965B52B29C96400449E67 /* SceneDelegate.swift */,
-				E18965EA2B29E50A00449E67 /* BottomButton.swift */,
-				E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */,
-				E18965EE2B29F36400449E67 /* MakeCharacterDescViewController.swift */,
+				E1541F242B2D935F004AAD31 /* Resources */,
+				E1541F252B2D936D004AAD31 /* CustomView */,
+				E1541F262B2D937B004AAD31 /* QuestionIntroView */,
 				E13287B82B2C26F6006F6108 /* QuestionScene */,
-				E18965E32B29D70500449E67 /* CustomTabBarController.swift */,
 				E18965E82B29DAA700449E67 /* ChatViewController.swift */,
-				E18965B92B29C96400449E67 /* Main.storyboard */,
-				E18965BC2B29C96600449E67 /* Assets.xcassets */,
-				E18965BE2B29C96600449E67 /* LaunchScreen.storyboard */,
 				E18965C12B29C96600449E67 /* Info.plist */,
 			);
 			path = ddona;
@@ -302,12 +340,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */,
+				E1541F232B2D8F11004AAD31 /* ScoreModel.swift in Sources */,
 				E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */,
 				E18965E42B29D70500449E67 /* CustomTabBarController.swift in Sources */,
 				E13287BA2B2C271A006F6108 /* QuestionModel.swift in Sources */,
 				E18965ED2B29E82800449E67 /* UIButton.swift in Sources */,
 				E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */,
 				E18965E92B29DAA700449E67 /* ChatViewController.swift in Sources */,
+				E1541F292B2D939E004AAD31 /* CreateNickNameViewController.swift in Sources */,
 				E18965F12B29F77900449E67 /* QuestionViewController.swift in Sources */,
 				E18965EB2B29E50A00449E67 /* BottomButton.swift in Sources */,
 				E18965EF2B29F36400449E67 /* MakeCharacterDescViewController.swift in Sources */,
