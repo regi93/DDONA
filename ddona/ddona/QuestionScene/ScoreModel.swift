@@ -10,16 +10,18 @@ import Foundation
 struct ScoreModel {
     
     struct Request: Encodable {
-        let mbtiScroes : scoreSet
+        
+        var mbtiScores : scoreSet
+        
         struct scoreSet: Encodable {
-            let E = 0
-            let I = 0
-            let S = 0
-            let N = 0
-            let T = 0
-            let F = 0
-            let P = 0
-            let J = 0
+            var E = 0
+            var I = 0
+            var S = 0
+            var N = 0
+            var T = 0
+            var F = 0
+            var P = 0
+            var J = 0
         }
     }
     

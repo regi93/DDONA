@@ -15,7 +15,7 @@ class MakeCharacterViewController: UIViewController {
         self.view.backgroundColor = UIColor(hexCode: "#191919")
         configureNavBar()
         configureUI()
-        configureLogo()
+        
     }
 
     private func configureNavBar(){
@@ -36,21 +36,19 @@ class MakeCharacterViewController: UIViewController {
             button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -27),
             button.heightAnchor.constraint(equalToConstant: 57)
         ])
-    }
-    
-
-    private func configureLogo(){
-        let logoImageView = UIImageView(image: UIImage(named: "logo"))
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(logoImageView)
-        
+        let imgView = UIImageView()
+        self.view.addSubview(imgView)
+        imgView.image = UIImage(named: "intro")
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleToFill
         NSLayoutConstraint.activate([
-            logoImageView.widthAnchor.constraint(equalToConstant: 120),
-            logoImageView.heightAnchor.constraint(equalToConstant: 25.5),
-            logoImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 17),
-            logoImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0)
+            imgView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            imgView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            imgView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            imgView.bottomAnchor.constraint(equalTo: button.topAnchor)
         ])
     }
+    
     
     @objc func nextPage(_ btn: UIButton) {
         let vc = MakeCharacterDescViewController()

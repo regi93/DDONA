@@ -55,12 +55,19 @@ class BottomButton: UIButton {
         case .white:
             self.titleLb.textColor = UIColor(hexCode: "868686")
             self.backgroundColor = UIColor(hexCode: "DDDDDD")
+        case .textField:
+            self.titleLb.textColor = UIColor(hexCode: "868686")
+            self.backgroundColor = .white
+            self.layer.borderColor = UIColor(hexCode: "6100FF").cgColor
+            self.layer.borderWidth = 3
+            
         }
     }
     
     enum BtnType {
         case purple
         case white
+        case textField
         case black
     }
 }

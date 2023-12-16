@@ -7,15 +7,8 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
+class QuestionViewController: UIViewController{
+
     
     let topView = BottomButton()
     var viewModel: QuestionViewModel?
@@ -23,10 +16,10 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
     var answerBtn = [BottomButton]()
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 5
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.isScrollEnabled = false
+        cv.backgroundColor = .clear
         return cv
     }()
     
@@ -40,6 +33,9 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         configureNavBar()
         configureTopView()
         configureCollectionView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         viewModel?.fetchQuestion(process: self.process) { [weak self] in
             self?.configureQuestionTitle(text: (self?.viewModel?.question)!)
             self?.configureAnswerView(number: 1, beforeYPosition: (self?.questionLb.bottomAnchor)!)
@@ -47,14 +43,26 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func showNextQuestion(){
-        if self.process < 19 {
-            let vc = QuestionViewController()
-            vc.viewModel = self.viewModel
-            vc.process = self.process + 1
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else{
-            
-        }
+        ///test
+        let vc = CreateNickNameViewController()
+        vc.process = self.process + 1
+        vc.viewModel = self.viewModel
+        self.navigationController?.pushViewController(vc, animated: true)
+        ///test
+        
+//        if self.process < 18 {
+//            let vc = QuestionViewController()
+//            vc.viewModel = self.viewModel
+//            vc.process = self.process + 1
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+//        else{
+//            let vc = CreateNickNameViewController()
+//            vc.viewModel = self.viewModel
+//            vc.process = self.process + 1
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+        
     }
     
     private func configureNavBar(){
@@ -77,14 +85,14 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     private func configureCollectionView(){
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.collectionView)
-        collectionView.backgroundColor = .red
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 8),
-            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             collectionView.heightAnchor.constraint(equalToConstant: 32),
-            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
         ])
     }
     
@@ -92,7 +100,7 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
         questionLb.textColor = .white
         questionLb.numberOfLines = 0
         questionLb.lineBreakMode = .byWordWrapping
-        var paragraphStyle = NSMutableParagraphStyle()
+        let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.42
         questionLb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         questionLb.translatesAutoresizingMaskIntoConstraints = false
@@ -150,9 +158,31 @@ class QuestionViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @objc func answerTapped(_ sender: UIButton){
         answerSelected(tag: sender.tag)
-        self.viewModel?.userScore.append(self.viewModel!.scoreStandard[sender.tag - 1])
-        print(self.viewModel?.userScore)
+        self.viewModel?.selectedAnswer(idx: sender.tag - 1)
+    }   
+}
+
+
+extension QuestionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 19
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.contentView.layer.cornerRadius = 4
+        if indexPath.row < self.process {
+            cell.contentView.backgroundColor = UIColor(hexCode: "6100FF")
+            return cell
+        }
+        cell.contentView.backgroundColor = UIColor(hexCode: "2C2C2D")
+        return cell
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 28, height: 12)
+    }
 }
