@@ -41,7 +41,8 @@ class CustomTabBarViewController: UITabBarController {
     }
 
     private func createChatViewController() -> UINavigationController {
-        let nav = UINavigationController(rootViewController: ChatViewController())
+        // 나중에 처음인지 아닌지 확인해야함
+        let nav = UINavigationController(rootViewController: CompleteViewController())
         let item = configureTabBarItemTitle(imageName: "my")
         nav.tabBarItem = item
         return nav

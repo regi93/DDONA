@@ -16,15 +16,42 @@ class CompleteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(hexCode: "#191919")
-        configureTopView()
         configureCompleteBtn()
-        viewModel?.calculateScore { [weak self] in
-            self?.configureTextBox(mbti: self?.viewModel?.calculateResult?.type ?? "")
+        configureNavBar()
+        if viewModel == nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(didRecieveTestNotification(_:)), name: NSNotification.Name("completeView"), object: nil)
+            self.viewModel = QuestionViewModel()
+            viewModel?.calculateResult = ScoreModel.Response(type: UserDefaults.standard.string(forKey: "MBTI") ?? "", name: UserDefaults.standard.string(forKey: "resultName") ?? "", description: UserDefaults.standard.string(forKey: "resultDescription") ?? "", imageName: "")
+            guard let data = self.viewModel?.calculateResult else { return }
+            self.configureTextBox(data: data)
+            
+        }else {
+            viewModel?.calculateScore { [weak self] in
+                guard let data = self?.viewModel?.calculateResult else { return }
+                self?.configureTextBox(data: data)
+                NotificationCenter.default.post(name: NSNotification.Name("completeView"), object: nil, userInfo: nil)
+            }
         }
     }
     
-    private func configureTextBox(mbti: String) {
+    @objc func didRecieveTestNotification(_ notification: Notification) {
+        self.viewModel = QuestionViewModel()
+        viewModel?.calculateResult = ScoreModel.Response(type: UserDefaults.standard.string(forKey: "MBTI") ?? "", name: UserDefaults.standard.string(forKey: "resultName") ?? "", description: UserDefaults.standard.string(forKey: "resultDescription") ?? "", imageName: "")
+        guard let data = self.viewModel?.calculateResult else { return }
+        self.configureTextBox(data: data)
+    }
+    
+    
+    private func configureNavBar(){
+        self.navigationController?.navigationBar.tintColor = .white
+        let backButton = UIBarButtonItem()
+        backButton.title = nil
+        self.navigationItem.backBarButtonItem = backButton
+    }
+    
+    private func configureTextBox(data: ScoreModel.Response) {
         
         let containerView = UIView()
         containerView.clipsToBounds = true
@@ -41,7 +68,6 @@ class CompleteViewController: UIViewController {
             containerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 58),
         ])
         
-        
         let nickName = UserDefaults.standard.string(forKey: "nickName")
         topView.configureUI(title: nickName ?? "나의 부캐" , radius: 19.5, type: .purple)
         self.view.addSubview(topView)
@@ -51,7 +77,6 @@ class CompleteViewController: UIViewController {
             topView.heightAnchor.constraint(equalToConstant: 39),
             topView.widthAnchor.constraint(equalToConstant: 75)
         ])
-        
         
         let upperView = UIView()
         containerView.addSubview(upperView)
@@ -67,7 +92,7 @@ class CompleteViewController: UIViewController {
         let imgView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.backgroundColor = UIColor(hexCode: "32374b")
-        imgView.image = UIImage(named: mbti)
+        imgView.image = UIImage(named: data.type)
         upperView.addSubview(imgView)
         
         NSLayoutConstraint.activate([
@@ -82,7 +107,7 @@ class CompleteViewController: UIViewController {
         titleLb.translatesAutoresizingMaskIntoConstraints = false
         titleLb.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         titleLb.textColor = .white
-        titleLb.text = viewModel?.calculateResult?.name
+        titleLb.text = data.name
         containerView.addSubview(titleLb)
         NSLayoutConstraint.activate([
             titleLb.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -92,10 +117,11 @@ class CompleteViewController: UIViewController {
         let descLb = UILabel()
         descLb.translatesAutoresizingMaskIntoConstraints = false
         descLb.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        descLb.textColor = .white
         descLb.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.42
-        descLb.attributedText = NSMutableAttributedString(string: viewModel?.calculateResult?.description ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        descLb.attributedText = NSMutableAttributedString(string: data.description ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         descLb.textAlignment = .center
         containerView.addSubview(descLb)
         NSLayoutConstraint.activate([
@@ -104,21 +130,14 @@ class CompleteViewController: UIViewController {
             descLb.topAnchor.constraint(equalTo: titleLb.bottomAnchor, constant: 7),
             containerView.bottomAnchor.constraint(equalTo: descLb.bottomAnchor, constant: 24)
         ])
-        
-        
-        
-    }
-    
-    private func configureTopView(){
-
     }
     
     private func configureCompleteBtn(){
-        completeBtn.isUserInteractionEnabled = false
+        completeBtn.isUserInteractionEnabled = true
         completeBtn.configureUI(title: "나의 부캐와 대화하러 가기", radius: 26.5, type: .purple)
         self.view.addSubview(completeBtn)
         NSLayoutConstraint.activate([
-            completeBtn.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -17),
+            completeBtn.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -27),
             completeBtn.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             completeBtn.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             completeBtn.heightAnchor.constraint(equalToConstant: 57)
@@ -127,6 +146,8 @@ class CompleteViewController: UIViewController {
     }
     
     @objc func goChat(_ sender: UIButton){
-        print(#function)
+        let vc = ChatViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

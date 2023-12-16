@@ -43,25 +43,25 @@ class QuestionViewController: UIViewController{
     }
     
     func showNextQuestion(){
-        ///test
-        let vc = CreateNickNameViewController()
-        vc.process = self.process + 1
-        vc.viewModel = self.viewModel
-        self.navigationController?.pushViewController(vc, animated: true)
-        ///test
+//        ///test
+//        let vc = CreateNickNameViewController()
+//        vc.process = self.process + 1
+//        vc.viewModel = self.viewModel
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        ///test
         
-//        if self.process < 18 {
-//            let vc = QuestionViewController()
-//            vc.viewModel = self.viewModel
-//            vc.process = self.process + 1
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else{
-//            let vc = CreateNickNameViewController()
-//            vc.viewModel = self.viewModel
-//            vc.process = self.process + 1
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
+        if self.process < 18 {
+            let vc = QuestionViewController()
+            vc.viewModel = self.viewModel
+            vc.process = self.process + 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else{
+            let vc = CreateNickNameViewController()
+            vc.viewModel = self.viewModel
+            vc.process = self.process + 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     

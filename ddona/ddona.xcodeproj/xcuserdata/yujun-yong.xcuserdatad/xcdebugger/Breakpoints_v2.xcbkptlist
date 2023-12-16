@@ -3,4 +3,178 @@
    uuid = "5A7DAAFB-1652-46AB-AB3F-3AA768C55081"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5671E2FE-B8BA-4C48-8A6E-9D66E6C06E01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ddona/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "refreshRecomend(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5671E2FE-B8BA-4C48-8A6E-9D66E6C06E01 - 6adaaae7729280f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.ChatViewController.refreshRecomend(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "5671E2FE-B8BA-4C48-8A6E-9D66E6C06E01 - 3aaed4bee37f6771"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ddona.ChatViewController.refreshRecomend(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "5671E2FE-B8BA-4C48-8A6E-9D66E6C06E01 - 6adaaae772928ea0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.ChatViewController.refreshRecomend(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "5671E2FE-B8BA-4C48-8A6E-9D66E6C06E01 - 3aaed4bee37f6923"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ddona.ChatViewController.refreshRecomend(__C.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62E7BA26-1052-4742-B9B3-4B73418F84B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ddona/Chat/ChatTableViewCell/MyChatTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "configureCell(text:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62E7BA26-1052-4742-B9B3-4B73418F84B5 - bd70eb68c4239fa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.MyChatTableViewCell.configureCell(text: Swift.String) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatTableViewCell/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "62E7BA26-1052-4742-B9B3-4B73418F84B5 - bd70eb68c4239fa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.MyChatTableViewCell.configureCell(text: Swift.String) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatTableViewCell/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "62E7BA26-1052-4742-B9B3-4B73418F84B5 - bd70eb68c4239fa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.MyChatTableViewCell.configureCell(text: Swift.String) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatTableViewCell/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "62E7BA26-1052-4742-B9B3-4B73418F84B5 - bd70eb68c4239fa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ddona.MyChatTableViewCell.configureCell(text: Swift.String) -&gt; ()"
+                  moduleName = "ddona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yujun-yong/Desktop/ddona/ddona/ddona/Chat/ChatTableViewCell/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3035EE7-BE08-49A7-AF98-AF9A67876FE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ddona/Chat/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "dismissKeyboard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

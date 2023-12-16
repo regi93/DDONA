@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+struct ChatModel {
+    
+    struct Request: Encodable {
+        let message: String
+    }
+    
+    struct Response: Decodable {
+        let message: String
+    }
+    
+    struct Recommend: Decodable{
+        let recommend1: String
+        let recommend2: String
+        
+    }
+}

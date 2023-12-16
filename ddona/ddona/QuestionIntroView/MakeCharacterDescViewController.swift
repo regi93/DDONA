@@ -11,7 +11,7 @@ class MakeCharacterDescViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(hexCode: "#191919")
+        self.view.backgroundColor = UIColor(hexCode: "191919")
         configureNavBar()
         configureDescImageView()
         configureBtn()

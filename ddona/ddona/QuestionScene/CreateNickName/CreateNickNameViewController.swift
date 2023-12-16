@@ -98,7 +98,6 @@ class CreateNickNameViewController: UIViewController {
     private func configureTextField(){
         textFieldView.configureUI(title: "이름을 적어주세요.", radius: 26.5, type: .textField)
 
-        
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.delegate = self
         tf.font = UIFont.systemFont(ofSize: 18, weight: .bold)

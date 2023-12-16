@@ -59,9 +59,12 @@ class QuestionViewModel {
                 let decoder = JSONDecoder()
                 let json = try decoder.decode(ScoreModel.Response.self, from: data!)
                 self.calculateResult = json
-                completion()
+                UserDefaults.standard.set(self.calculateResult?.type,forKey: "MBTI")
+                UserDefaults.standard.set(self.calculateResult?.name,forKey: "resultName")
+                UserDefaults.standard.set(self.calculateResult?.description,forKey: "resultDescription")
                 print(String(data: data!, encoding: .utf8))
                 print(response.debugDescription)
+                completion()
             } catch {
                 print("Error decoding JSON: \(error)")
             }
@@ -82,7 +85,7 @@ class QuestionViewModel {
         
         var scoreSet = ScoreModel.Request.scoreSet()
         
-        for ele in ["E","I","S"] {
+        for ele in userScore{
             switch ele{
             case "E":
                 scoreSet.E += 1

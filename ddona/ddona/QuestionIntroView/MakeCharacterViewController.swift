@@ -12,7 +12,7 @@ class MakeCharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(hexCode: "#191919")
+        self.view.backgroundColor = UIColor(hexCode: "191919")
         configureNavBar()
         configureUI()
         

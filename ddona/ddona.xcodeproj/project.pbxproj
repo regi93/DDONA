@@ -12,6 +12,12 @@
 		E1541F232B2D8F11004AAD31 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1541F222B2D8F11004AAD31 /* ScoreModel.swift */; };
 		E1541F292B2D939E004AAD31 /* CreateNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1541F282B2D939E004AAD31 /* CreateNickNameViewController.swift */; };
 		E1541F2E2B2DB395004AAD31 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1541F2D2B2DB395004AAD31 /* CompleteViewController.swift */; };
+		E16CE1D02B2DDE020046DC1E /* ChatBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1CF2B2DDE020046DC1E /* ChatBotTableViewCell.swift */; };
+		E16CE1D22B2DE5140046DC1E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1D12B2DE5140046DC1E /* ProfileTableViewCell.swift */; };
+		E16CE1D42B2DE85E0046DC1E /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1D32B2DE85E0046DC1E /* MyChatTableViewCell.swift */; };
+		E16CE1D62B2DE9F60046DC1E /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1D52B2DE9F60046DC1E /* GuideTableViewCell.swift */; };
+		E16CE1D82B2DF0710046DC1E /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1D72B2DF0710046DC1E /* ChatViewModel.swift */; };
+		E16CE1DA2B2DF0750046DC1E /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE1D92B2DF0750046DC1E /* ChatModel.swift */; };
 		E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B32B29C96400449E67 /* AppDelegate.swift */; };
 		E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B52B29C96400449E67 /* SceneDelegate.swift */; };
 		E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18965B72B29C96400449E67 /* MakeCharacterViewController.swift */; };
@@ -53,6 +59,12 @@
 		E1541F222B2D8F11004AAD31 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
 		E1541F282B2D939E004AAD31 /* CreateNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNickNameViewController.swift; sourceTree = "<group>"; };
 		E1541F2D2B2DB395004AAD31 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		E16CE1CF2B2DDE020046DC1E /* ChatBotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotTableViewCell.swift; sourceTree = "<group>"; };
+		E16CE1D12B2DE5140046DC1E /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E16CE1D32B2DE85E0046DC1E /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
+		E16CE1D52B2DE9F60046DC1E /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
+		E16CE1D72B2DF0710046DC1E /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		E16CE1D92B2DF0750046DC1E /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		E18965B02B29C96400449E67 /* ddona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18965B32B29C96400449E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18965B52B29C96400449E67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +163,28 @@
 			path = CreateNickName;
 			sourceTree = "<group>";
 		};
+		E16CE1CD2B2DD4200046DC1E /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E16CE1CE2B2DDDED0046DC1E /* ChatTableViewCell */,
+				E18965E82B29DAA700449E67 /* ChatViewController.swift */,
+				E16CE1D72B2DF0710046DC1E /* ChatViewModel.swift */,
+				E16CE1D92B2DF0750046DC1E /* ChatModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		E16CE1CE2B2DDDED0046DC1E /* ChatTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E16CE1CF2B2DDE020046DC1E /* ChatBotTableViewCell.swift */,
+				E16CE1D12B2DE5140046DC1E /* ProfileTableViewCell.swift */,
+				E16CE1D32B2DE85E0046DC1E /* MyChatTableViewCell.swift */,
+				E16CE1D52B2DE9F60046DC1E /* GuideTableViewCell.swift */,
+			);
+			path = ChatTableViewCell;
+			sourceTree = "<group>";
+		};
 		E18965A72B29C96400449E67 = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +213,7 @@
 				E1541F252B2D936D004AAD31 /* CustomView */,
 				E1541F262B2D937B004AAD31 /* QuestionIntroView */,
 				E13287B82B2C26F6006F6108 /* QuestionScene */,
-				E18965E82B29DAA700449E67 /* ChatViewController.swift */,
+				E16CE1CD2B2DD4200046DC1E /* Chat */,
 				E18965C12B29C96600449E67 /* Info.plist */,
 			);
 			path = ddona;
@@ -345,17 +379,23 @@
 				E18965B82B29C96400449E67 /* MakeCharacterViewController.swift in Sources */,
 				E1541F232B2D8F11004AAD31 /* ScoreModel.swift in Sources */,
 				E18965B42B29C96400449E67 /* AppDelegate.swift in Sources */,
+				E16CE1D62B2DE9F60046DC1E /* GuideTableViewCell.swift in Sources */,
 				E18965E42B29D70500449E67 /* CustomTabBarController.swift in Sources */,
 				E13287BA2B2C271A006F6108 /* QuestionModel.swift in Sources */,
+				E16CE1D02B2DDE020046DC1E /* ChatBotTableViewCell.swift in Sources */,
 				E18965ED2B29E82800449E67 /* UIButton.swift in Sources */,
+				E16CE1D42B2DE85E0046DC1E /* MyChatTableViewCell.swift in Sources */,
 				E18965B62B29C96400449E67 /* SceneDelegate.swift in Sources */,
 				E18965E92B29DAA700449E67 /* ChatViewController.swift in Sources */,
 				E1541F2E2B2DB395004AAD31 /* CompleteViewController.swift in Sources */,
 				E1541F292B2D939E004AAD31 /* CreateNickNameViewController.swift in Sources */,
+				E16CE1D22B2DE5140046DC1E /* ProfileTableViewCell.swift in Sources */,
 				E18965F12B29F77900449E67 /* QuestionViewController.swift in Sources */,
 				E18965EB2B29E50A00449E67 /* BottomButton.swift in Sources */,
 				E18965EF2B29F36400449E67 /* MakeCharacterDescViewController.swift in Sources */,
+				E16CE1DA2B2DF0750046DC1E /* ChatModel.swift in Sources */,
 				E18965E72B29D71B00449E67 /* UIColor.swift in Sources */,
+				E16CE1D82B2DF0710046DC1E /* ChatViewModel.swift in Sources */,
 				E13287B72B2C26EF006F6108 /* QuestionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,10 +577,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ddona/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "또나";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -551,7 +592,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jy.ddona;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jy.ddona-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -565,10 +606,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 5KZ5C4UW39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ddona/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "또나";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -579,7 +621,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jy.ddona;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jy.ddona-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
