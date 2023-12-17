@@ -16,7 +16,7 @@ class QuestionViewModel {
     var calculateResult: ScoreModel.Response?
     
     func fetchQuestion(process: Int, completion: @escaping ()-> Void){
-        var request = URLRequest(url: URL(string: "http://43.201.67.203:8080/api/mbti/question/\(process)")!)
+        var request = URLRequest(url: URL(string: "http://43.200.179.17:8080/api/mbti/question/\(process)")!)
         request.httpMethod = "GET"
         URLSession.shared.dataTask(with: request) { data, response, error in
             do {
@@ -40,7 +40,7 @@ class QuestionViewModel {
     
     
     private func fetchMBTIResult(body: ScoreModel.Request, completion: @escaping ()-> Void){
-        var request = URLRequest(url: URL(string: "http://43.201.67.203:8080/api/mbti/calculate")!)
+        var request = URLRequest(url: URL(string: "http://43.200.179.17:8080/api/mbti/calculate")!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         

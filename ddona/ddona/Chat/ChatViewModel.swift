@@ -41,7 +41,7 @@ let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dCIsImF1dGgiOiJST0xFX1VTRVIiLCJleH
     }
     
     func fetchRecommend(completion: @escaping () -> ()){
-        var request = URLRequest(url: URL(string: "http://43.201.67.203:8080/api/clova/messages/")!)
+        var request = URLRequest(url: URL(string: "http://43.200.179.17:8080/api/clova/messages/")!)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -69,7 +69,7 @@ let token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dCIsImF1dGgiOiJST0xFX1VTRVIiLCJleH
         self.chatLog.append(ChatEntry(type: .myChat, message: message))
             
         
-        var request = URLRequest(url: URL(string: "http://43.201.67.203:8080/api/clova/chat")!)
+        var request = URLRequest(url: URL(string: "http://43.200.179.17:8080/api/clova/chat")!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
